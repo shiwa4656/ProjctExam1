@@ -1,33 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HotView Labs Blog</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HotView Labs</title>
+<link rel="icon" type="image/png" href="RealBlogLogo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to HotView Labs Blog</h1>
-        <nav>
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/account/login.html">Login</a></li>
-                <li><a href="/account/register.html">Register</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="carousel">
-            <!-- Carousel items will be dynamically generated here -->
-        </section>
-        <section class="thumbnails">
-            <!-- Thumbnail grid items will be dynamically generated here -->
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 HotView Labs. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+<header>
+  <nav>
+    <div class="left-nav">
+        <div class="logo">
+            <img class="logoImage" src="RealBlogLogo.png" alt="HotView Labs Logo">
+          </div>
+          <h1>HotView Labs</h1>
+    </div>
+ 
+    <ul>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="newpost.html" class="Nav-btn" id="newpost-btn">➕ NEW POST</a></li>
+        <li><a href="register.html" class="Nav-btn" id="register-btn">REGISTER</a></li>
+        <li><a href="login.html" class="Nav-btn login-btn" id="login-btn">LOGIN</a></li>
+        <li><a onclick="signOut()" class="Nav-btn logout-btn" id="logout-btn">SIGN OUT</a></li>
+    </ul>
+    
+  </nav>
+    <div class="hero"> 
+        <h1>Latest posts</h1>
+        <div class="carousel-container">
+            <div id="arrowPicMov" class="carousel-arrow left-arrow" onclick="moveLeft()" >
+                <img src="leftArrow.png" alt="Previous">
+              </div>
+            <div class="carousel" >
+                <article class="post" style="order: 1;">
+                    <div class="imageArticleContainer">
+                        <img class="post-image" src="carsAi.jpeg" alt="Post Description">
+                    </div>
+                  
+                  <p class="post-date">28. April 2024</p>
+                  <h2 class="post-title">AI in Homes: Making Living Spaces Smarter</h2>
+            
+                </article>
+                
+                <article class="post" style="order: 2;"> 
+                    <div class="imageArticleContainer">
+                        <img class="post-image" src="Airev.png" alt="Post Description">  
+                    </div>
+                    <p class="post-date">28. April 2024</p>
+                    <h2 class="post-title">AI in Homes: Making Living Spaces Smarter</h2>
+               
+                </article>
+                <article class="post" style="order: 3;">
+                    <div class="imageArticleContainer">
+                     <img class="post-image" src="Artificial-Intelligence-AI-PNG-Photos.png" alt="Post Description">
+                    </div>
+                    <!-- author -->
+                    <p class="author">Shirwac</p>
+                    <p class="post-date">28. April 2024</p>
+                    <h2 class="post-title">AI in Homes: Making Living Spaces Smarter</h2>
+               
+                </article>
+               
+              </div>
+              <div id="arrowPicMov" class="carousel-arrow right-arrow" onclick="moveRight()">
+                <img  src="rightArrow.png" alt="Next">
+              </div>
+
+        </div>
+        
+          
+    </div>
+        
+        
+</header>
+
+<main>
+  <div class="filter-btn">
+    <button class="newest-btn">Newest</button>
+    <button class="oldest-btn">Oldest</button>
+  </div>
+    <div class="post-grid">
+        <article class="grid-post">
+          <img class="grid-post-image" src="Artificial-Intelligence-AI-PNG-Photos.png" alt="Post Description">
+          <div class="grid-post-content">
+            <p class="grid-post-date"></p>
+            <h2 class="grid-post-title"></h2>
+            <p class="grid-post-summary"></p>
+          </div>
+        </article>
+        <article class="grid-post">
+          <img class="grid-post-image" src="Artificial-Intelligence-AI-PNG-Photos.png" alt="Post Description">
+          <div class="grid-post-content">
+            <p class="grid-post-date"></p>
+            <h2 class="grid-post-title"></h2>
+            <p class="grid-post-summary"></p>
+          </div>
+        </article>
+        <article class="grid-post">
+          <img class="grid-post-image" src="Artificial-Intelligence-AI-PNG-Photos.png" alt="Post Description">
+          <div class="grid-post-content">
+            <p class="grid-post-date"></p>
+            <h2 class="grid-post-title"></h2>
+            <p class="grid-post-summary"></p>
+          </div>
+        </article>
+        <article class="grid-post">
+          <img class="grid-post-image" src="Artificial-Intelligence-AI-PNG-Photos.png" alt="Post Description">
+          <div class="grid-post-content">
+            <p class="grid-post-date"></p>
+            <h2 class="grid-post-title"></h2>
+            <p class="grid-post-summary"></p>
+          </div>
+        </article>
+        <article class="grid-post">
+          <img class="grid-post-image" src="Artificial-Intelligence-AI-PNG-Photos.png" alt="Post Description">
+          <div class="grid-post-content">
+            <p class="grid-post-date"></p>
+            <h2 class="grid-post-title"></h2>
+            <p class="grid-post-summary"></p>
+          </div>
+        </article>
+        <article class="grid-post">
+          <img class="grid-post-image" src="Artificial-Intelligence-AI-PNG-Photos.png" alt="Post Description">
+          <div class="grid-post-content">
+            <p class="grid-post-date"></p>
+            <h2 class="grid-post-title"></h2>
+            <p class="grid-post-summary"></p>
+          </div>
+        </article>
+        <article class="grid-post">
+          <img class="grid-post-image" src="Artificial-Intelligence-AI-PNG-Photos.png" alt="Post Description">
+          <div class="grid-post-content">
+            <p class="grid-post-date"></p>
+            <h2 class="grid-post-title"></h2>
+            <p class="grid-post-summary"></p>
+          </div>
+        </article>
+        <article class="grid-post">
+          <img class="grid-post-image" src="Artificial-Intelligence-AI-PNG-Photos.png" alt="Post Description">
+          <div class="grid-post-content">
+            <p class="grid-post-date"></p>
+            <h2 class="grid-post-title"></h2>
+            <p class="grid-post-summary"></p>
+          </div>
+        </article>
+        <article class="grid-post">
+          <img class="grid-post-image" src="Artificial-Intelligence-AI-PNG-Photos.png" alt="Post Description">
+          <div class="grid-post-content">
+            <p class="grid-post-date"></p>
+            <h2 class="grid-post-title"></h2>
+            <p class="grid-post-summary"></p>
+          </div>
+        </article>
+        <article class="grid-post">
+          <img class="grid-post-image" src="Artificial-Intelligence-AI-PNG-Photos.png" alt="Post Description">
+          <div class="grid-post-content">
+            <p class="grid-post-date"></p>
+            <h2 class="grid-post-title"></h2>
+            <p class="grid-post-summary"></p>
+          </div>
+        </article>
+        <article class="grid-post">
+          <img class="grid-post-image" src="Artificial-Intelligence-AI-PNG-Photos.png" alt="Post Description">
+          <div class="grid-post-content">
+            <p class="grid-post-date"></p>
+            <h2 class="grid-post-title"></h2>
+            <p class="grid-post-summary"></p>
+          </div>
+        </article>
+        <article class="grid-post">
+          <img class="grid-post-image" src="Artificial-Intelligence-AI-PNG-Photos.png" alt="Post Description">
+          <div class="grid-post-content">
+            <p class="grid-post-date"></p>
+            <h2 class="grid-post-title"></h2>
+            <p class="grid-post-summary"></p>
+          </div>
+        </article>
+
+       
+      </div> 
+    <button class="view-more">View more</button>   
+  
+</main>
+
+
+<footer>
+  <div class="Footer-logo">
+    <img class="logoImage" src="RealBlogLogo.png" alt="HotView Labs Logo">
+  </div>
+  <div class="footer-content">
+    <ul class="social-links">
+      <li><a href="https://www.facebook.com" class="icon-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+      <li><a href="https://twitter.com" class="icon-link" aria-label="twitter"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="https://www.instagram.com" class="icon-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/yourusername" class="icon-link" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+      <li><a href="mailto:youremail@example.com" class="icon-link" aria-label="Email"><i class="fa-regular fa-envelope"></i></a></li>
+  </ul>  
+    <h3>Hotview Labs</h3>
+    <p>&copy; 2024 HotView Labs. All rights reserved.</p>
+  </div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>

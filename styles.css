@@ -1,73 +1,403 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Global Styles */
+/* General styling */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-nav ul {
+    font-family: 'Arial', sans-serif;
+  }
+header{
+    background-color: RGB(15, 23, 42);
+    margin: 3%;
+    margin-top: 1%;
+    
+  }
+  nav ul {
     list-style: none;
-}
-
-nav ul li {
+   
+  }
+  
+  nav ul li {
     display: inline;
     margin-right: 20px;
-}
+  }
+  .Nav-btn{
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 2px solid white;
+  }
+  .login-btn{
+    background-color: #fff;
+    color: #0F172A;
+  }
 
-nav ul li a {
-    color: #fff;
+  .logout-btn{
+    background-color: #0F172A;
+    color: white;
+  } 
+  a {
     text-decoration: none;
-}
-
-main {
+    color: white;
+   
+  }
+  
+  /* Header styling */
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
+  }
+  .left-nav{
+    display: flex;
+    width: 20%;
+  }
+  .left-nav h1{
+    color: white; 
+    margin-left: 8%;
+  }
+  .logo {
+    width: 80px; /* Adjust based on your preference */
+    height: 80px; /* Same as width to maintain the circle shape */
+    border-radius: 50%; /* This creates the circle shape */
+    overflow: hidden; /* Ensures no part of the image spills outside the circle */
+    display: flex; /* Helps center the image inside the circle */
+
+}
+.logo h1{
+    color: white;
 }
 
-form {
-    margin-top: 20px;
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-form input[type="text"],
-form input[type="email"],
-form input[type="password"],
-form textarea {
+  .logo img {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+    height: 100%;
+    object-fit: cover;
+  }
+ 
+  .hero{
+    margin-left: 4%;
+  }
 
-form button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+  .hero h1{
+    color: white;
+    margin-left: 14%;
+  }
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative; /* For absolute positioning of arrows */
+    width: 100%;
+    height: 50%;
+    background-color: #0F172A;
+
+   
+  }
+  
+  .arrow {
+    position: absolute;
+    top:30%;
+    transform: translateY(-50%);
+    z-index: 10;
+   
+  }
+  #arrowPicMov :hover{
+    background-color: #1E293B;
+    cursor: pointer;
+  }
+  
+  
+  .left-arrow {
+    left: 0;
+    margin-left: 8%; /* Adjust as needed */
+  }
+  
+  .right-arrow {
+    right: 0;
+    margin-right: 1%; /* Adjust as needed */
+  }
+  
+  /* Adjust the size of your arrows as needed */
+  .arrow img {
+    width: 30px; /* Example size, change as needed */
+    height: auto;
+    transition: transform 0.3s ease; /* Optional: for a hover effect */
+  }
+  
+  .arrow img:hover {
+    transform: scale(1.1); /* Optional: for a hover effect */
+  }
+  .logout-btn {
     cursor: pointer;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
+  
+  
+  .carousel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    width: 60%;
+    align-items: center;
+
+
+  }
+  
+  .post {
+    background-color: #0F172A;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    color: white;
+    border: #2c2f33 solid 3px;
+    border-radius: 10px;
+    height: min-content;
+    margin-bottom: 10%;
+    flex: 0 0 33.3333%;
+    transition: order 0.5s ease;
+   
+    
+  }
+  .post:hover{
+    cursor: pointer;
+    background-color: #fff;
+    color: #0F172A;
+  }
+  .imageArticleContainer{
+    width: 80%;
+    align-items: center;
+  }
+  .imageArticleContainer{
+    width: 100%;
+  }
+  .post-image {
+    width: 100%;
+    height: 300px;
+    display: block;
+    overflow: hidden;
+   
+    
+  }
+  
+  .post-title {
+    font-size: 1.2em;
+    margin: 0.5em;
+  }
+  
+  .post-date {
+    color: white;
+    font-size: 0.9em;
+    margin: 0 0.5em;
+  }
+  
+  .post-summary {
+    font-size: 1em;
+    margin: 0.5em;
+  }
+ 
+  
+ 
+  
+  
+  
+  /* Add responsiveness */
+  @media (max-width: 600px) {
+    .carousel {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+
+/*main styles*/
+.filter-btn{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+
 }
+.newest-btn, .oldest-btn{
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 4 columns */
+    grid-template-rows: repeat(4, auto); /* Creates 3 rows with automatic row height */
+    gap: 20px;
+    padding: 10px; 
+    margin-left: 9%;
+    margin: 9%;/* Adjust padding to match your design */ /* Add padding as per your design's spacing */
+    margin-bottom: 2%;
+    margin-top: 2px;
+  }
+  
+  .grid-post {
+    background-color: #f2f2f2; /* Dark background from the design */
+    border-radius: 5px;
+    overflow: hidden;
+    color: rgba(15, 23, 42) /* Text color for readability on dark background */
+  }
+  .grid-post:hover{
+    cursor: pointer;
+    background-color:#0F172A;
+    color: #fff;
+  }
+  
+  .grid-post-image {
+    width: 100%;
+    display: block; /* Removes bottom space under the image */
+  }
+  
+  .grid-post-content {
+    padding: 10px;
+  }
+  
+  .grid-post-date {
+    font-size: 0.8em;
+  }
+  
+  .grid-post-title {
+    font-size: 1em;
+    margin: 10px 0;
+  }
+  
+  .grid-post-summary {
+    font-size: 0.9em;
+  }
+  .view-more {
+    color: white;
+    background-color: #0F172A;
+    margin-bottom: 4%;
+    margin-left: 50%;
+    transform: translateX(-50%); 
+    padding: 10px 30px; 
+    box-sizing: border-box; 
+    text-align: center;
+    display: inline-block; 
+    border: none; 
+    cursor: pointer; 
+  }
+  
+  .view-more:hover{
+    background-color: #1E293B;
+    cursor: pointer;
+  }
+  
+  /* Add responsiveness */
+  @media (max-width: 768px) {
+    .post-grid {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+  }
+   
+  /* Footer styling */
+  .Footer-logo{
+    width: 80px; 
+    height: 80px; 
+    border-radius: 40%; 
+    overflow: hidden; 
+    display: flex; 
+    margin-left: 38%;
+    background-color: #ddd;
+  }
+
+  .Footer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+
+  footer {
+    background-color: rgba(15, 23, 42);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    margin: 3%;
+  }
+  
+  .social-links {
+    padding: 0;
+    gap: 20px;
+  }
+  
+  .social-links li {
+    display: inline;
+    margin: 0 10px;
+   
+  }
+  
+  .social-links img {
+    width: 24px;
+    height: auto;
+  }
+  
+  .footer-content p {
+    font-size: 0.8em;
+    color: #fff;
+  }
+  .footer-content h3{
+    color: white;
+  }
+  /*Register page*/
+  .signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height as needed */
+    background-color: #0F172A; /* Background color of the whole page */
+  }
+  
+  .signup-form {
+    background: white;
+    padding: 40px;
+    border-radius: 5px;
+    width: 340px; /* Adjust the width as needed */
+  }
+  
+  .signup-form h2 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .signup-form p {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .signup-form .signin-link {
+    color: #2563eb; /* Adjust the color as needed */
+    text-decoration: none;
+  }
+  
+  .signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .signup-form .signup-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0F172A; /* Button color */
+    color: white;
+    cursor: pointer;
+  }
+  
+  .signup-form .signup-btn:hover {
+    background-color: #1E293B; /* Button hover color */
+  }
+
+
+
+
+  .hidden{
+    display: none;
+  }

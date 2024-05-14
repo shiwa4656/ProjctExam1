@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About HotView Labs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<style>
+.about-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: #333333;
+}
+
+ .about-section h2 {
+    color: #0F172A;
+}
+
+.about-section p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+    
+</style>
+<body>
+    <header>
+        <nav>
+          <div class="left-nav">
+              <div class="logo">
+                  <img class="logoImage" src="RealBlogLogo.png" alt="HotView Labs Logo">
+                </div>
+                <h1>HotView Labs</h1>
+          </div>
+       
+          <ul>
+            <li><a href="index.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="newpost.html" class="Nav-btn" id="newpost-btn">➕ NEW POST</a></li>
+              <li><a href="register.html" class="Nav-btn" id="register-btn">REGISTER</a></li>
+              <li><a href="login.html" class="Nav-btn login-btn" id="login-btn">LOGIN</a></li>
+              <li><a onclick="signOut()" class="Nav-btn logout-btn" id="logout-btn">SIGN OUT</a></li>
+          </ul>
+          
+        </nav>
+                       
+      </header>
+   
+    <section class="about-section">
+        <h2>About Us</h2>
+        <p>HotView Labs is a premier technology blogging platform dedicated to providing the latest insights, news, and analysis on advancements in the tech world. Our content ranges from in-depth articles on artificial intelligence and machine learning to practical tips on software development and digital transformation.</p>
+        <p>Our mission is to empower tech enthusiasts, professionals, and students with valuable information that sparks innovation and fosters understanding. Whether you're looking for the latest tech trends or deep dives into specific technologies, HotView Labs is your go-to resource.</p>
+        <p>Join our community to stay up-to-date and be part of the conversation that shapes the future of technology.</p>
+    </section>
+    <footer>
+      <div class="Footer-logo">
+        <img class="logoImage" src="RealBlogLogo.png" alt="HotView Labs Logo">
+      </div>
+      <div class="footer-content">
+        <ul class="social-links">
+          <li><a href="https://www.facebook.com" class="icon-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="https://twitter.com" class="icon-link" aria-label="twitter"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://www.instagram.com" class="icon-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/yourusername" class="icon-link" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="mailto:youremail@example.com" class="icon-link" aria-label="Email"><i class="fa-regular fa-envelope"></i></a></li>
+      </ul>  
+        <h3>Hotview Labs</h3>
+        <p>&copy; 2024 HotView Labs. All rights reserved.</p>
+      </div>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>
