@@ -1,138 +1,274 @@
-// Function to handle registration form submission
-function handleRegistrationFormSubmit(event) {
-    event.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const bio = document.getElementById('bio').value;
-    const avatarUrl = document.getElementById('avatar-url').value;
-    const avatarAlt = document.getElementById('avatar-alt').value;
-    const bannerUrl = document.getElementById('banner-url').value;
-    const bannerAlt = document.getElementById('banner-alt').value;
+//Carousal JS code
 
-    // Validate inputs
-    if (!isValidEmail(email)) {
-        console.error('Invalid email address');
-        return;
-    }
-    if (password.length < 8) {
-        console.error('Password must be at least 8 characters');
-        return;
-    }
-    if (bio.length > 160) {
-        console.error('Bio must be less than 160 characters');
-        return;
-    }
-    if (avatarUrl && !isValidUrl(avatarUrl)) {
-        console.error('Invalid avatar URL');
-        return;
-    }
-    if (avatarAlt.length > 120) {
-        console.error('Avatar alt text must be less than 120 characters');
-        return;
-    }
-    if (bannerUrl && !isValidUrl(bannerUrl)) {
-        console.error('Invalid banner URL');
-        return;
-    }
-    if (bannerAlt.length > 120) {
-        console.error('Banner alt text must be less than 120 characters');
-        return;
-    }
+let order = [1, 2, 3]; // Start with the initial order
 
-    // Send registration request
-    fetch('/auth/register', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ name, email, password, bio, avatar: { url: avatarUrl, alt: avatarAlt }, banner: { url: bannerUrl, alt: bannerAlt } })
+function move(direction) {
+  // Rotate the order based on the direction
+  if (direction === 'right') {
+    order.unshift(order.pop()); // Move the last item to the first position
+  } else {
+    order.push(order.shift()); // Move the first item to the last position
+  }
+
+  // Apply the new order to the posts
+  const posts = document.querySelectorAll('.carousel .post');
+  posts.forEach((post, index) => {
+    post.style.order = order[index];
+  });
+}
+
+function moveLeft() {
+  move('left');
+}
+
+function moveRight() {
+  move('right');
+}
+
+// Add event listeners for arrows
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector('.left-arrow').addEventListener('click', moveLeft);
+  document.querySelector('.right-arrow').addEventListener('click', moveRight);
+});
+
+//end of Carousal JS code
+
+//Authentication js code
+
+
+
+
+
+
+window.addEventListener("DOMContentLoaded", function () {
+
+// check if the user is logged in
+if (localStorage.getItem("token")) {
+
+
+
+  document.querySelector("#login-btn").style.display = "none";
+  document.querySelector("#logout-btn").style.display = "inline-block";
+  document.querySelector("#register-btn").style.display = "none";
+}else{
+  // show the login button
+  document.querySelector("#login-btn").style.display = "inline-block";
+  document.querySelector("#logout-btn").style.display = "none";
+  document.querySelector("#newpost-btn").style.display = "none";
+}
+
+
+
+
+
+
+
+
+
+  // fetch all posts
+  fetch("https://v2.api.noroff.dev/blog/posts/shirwac",{
+    headers: {
+      "Content-Type": "application/json",
+    }
+  })
+    .then(function (response) {
+      return response.json();
     })
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error('Registration failed. Please try again.');
+    .then(function (data) {
+      const posts = data.data;
+      console.log(posts);
+
+
+      // loop through the first 3 posts, and display them in the carousel last three
+      for (let i = 0; i < 3; i++) {
+
+        console.log(posts[i]);
+        
+        // replace content of .carousel .post
+
+        const post = posts[i];
+
+
+
+        // format date post.create, as `4. april 2024`
+
+        const date = new Date(post.created);
+
+        const formattedDate = `${date.getDate()}. ${date.toLocaleString('default', { month: 'long' })} ${date.getFullYear()}`;
+
+
+
+
+        const postsDiv = document.querySelectorAll('.carousel .post');
+
+        const postDiv = postsDiv[i];
+
+          console.log(postDiv);
+
+
+          // add id attribute to the postDiv
+          postDiv.setAttribute("id", post.id);
+
+          // add event listener to the postDiv
+          postDiv.addEventListener("click", function () {
+            // redirect to the post details page
+            window.location.href = `postdetails.html?id=${post.id}`;
+          });
+
+
+          postDiv.innerHTML = `
+          <div class="imageArticleContainer">
+          <img class="post-image" src="${post.media.url}" alt="Image Description">
+          </div>
+          
+          <p class="post-date">${formattedDate}</p>
+          <h2 class="post-title">${post.title}</h2>
+  
+          
+          `
+
+
+     
+
+
+    
+
+
+      }
+
+
+
+    });
+     // fetch all posts
+     fetch("https://v2.api.noroff.dev/blog/posts/shirwac",{
+      headers: {
+        "Content-Type": "application/json",
+      }
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        const posts = data.data;
+        console.log(posts);
+  
+  
+        for (let i = 0; i < 12; i++) {
+  
+          console.log(posts[i]);
+          
+          // replace content of .carousel .post
+  
+          const post = posts[i];
+  
+  
+  
+          // format date post.create, as `4. april 2024`
+  
+          const date = new Date(post.created);
+  
+          const formattedDate = `${date.getDate()}. ${date.toLocaleString('default', { month: 'long' })} ${date.getFullYear()}`;
+  
+  
+  
+  
+          const postsDiv = document.querySelectorAll('.post-grid .grid-post');
+  
+          const postDiv = postsDiv[i];
+  
+            console.log(postDiv);
+  
+  
+            // add id attribute to the postDiv
+            postDiv.setAttribute("id", post.id);
+  
+            // add event listener to the postDiv
+            postDiv.addEventListener("click", function () {
+              // redirect to the post details page
+              window.location.href = `postdetails.html?id=${post.id}`;
+            });
+  
+  
+            postDiv.innerHTML = `
+            <div class="imageArticleContainer">
+            <img class="post-image" src="${post.media.url}" alt="Image Description">
+            </div>
+            <p class="grid-post-date">${formattedDate}</p>
+            <h2 class="grid-post-title">${post.title}</h2>
+           
+    
+            
+            `
+
+      
+  
+  
         }
-    })
-    .then(data => {
-        console.log('Registration successful!', data);
-        // Redirect user to login page or show success message
-    })
-    .catch(error => console.error('Registration error:', error.message));
+  
+  
+  
+      });
+
+
 }
 
-// Function to handle login form submission
-function handleLoginFormSubmit(event) {
-    event.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+);
 
-    // Send login request
-    fetch('/auth/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, password })
-    })
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error('Login failed. Please check your credentials.');
-        }
-    })
-    .then(data => {
-        // Store the authentication token securely (e.g., in local storage)
-        localStorage.setItem('accessToken', data.accessToken);
-        console.log('Login successful!', data);
-        // Redirect user to dashboard or another page
-    })
-    .catch(error => console.error('Login error:', error.message));
+document.addEventListener('DOMContentLoaded', function () {
+  const newestBtn = document.querySelector('.newest-btn');
+  const oldestBtn = document.querySelector('.oldest-btn');
+  const postGrid = document.querySelector('.post-grid');
+
+  function sortPosts(ascending = true) {
+      // Convert NodeList to Array to sort
+      let postsArray = Array.from(postGrid.querySelectorAll('.grid-post'));
+      postsArray.sort(function (a, b) {
+          const dateA = new Date(a.querySelector('.grid-post-date').textContent.trim());
+          const dateB = new Date(b.querySelector('.grid-post-date').textContent.trim());
+          return ascending ? dateA - dateB : dateB - dateA;
+      });
+
+      // Clear the current posts
+      postGrid.innerHTML = '';
+
+      // Append sorted posts
+      postsArray.forEach(post => postGrid.appendChild(post));
+  }
+
+  function restoreSortOrder() {
+      const sortOrder = localStorage.getItem('sortOrder');
+      if (sortOrder === 'oldest') {
+          sortPosts(true);
+      } else if (sortOrder === 'newest') {
+          sortPosts(false);
+      }
+  }
+
+  newestBtn.addEventListener('click', function () {
+      sortPosts(false); // Sort by newest
+      localStorage.setItem('sortOrder', 'newest'); 
+  });
+
+  oldestBtn.addEventListener('click', function () {
+      sortPosts(true); // Sort by oldest
+      localStorage.setItem('sortOrder', 'oldest');
+  });
+
+  restoreSortOrder(); 
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const viewMoreBtn = document.querySelector('.view-more');
+
+ 
+  viewMoreBtn.addEventListener('click', function () {
+      window.location.href = 'viewMore.html';
+  });
+});
+
+
+
+function signOut() {
+  localStorage.removeItem("token");
+  location.reload();
 }
-
-// Function to create an API key
-function createApiKey() {
-    fetch('/auth/create-api-key', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ name: 'My API Key name' })
-    })
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error('Failed to create API key.');
-        }
-    })
-    .then(data => {
-        console.log('API key created successfully:', data);
-        // Store or display the API key as needed
-    })
-    .catch(error => console.error('Error creating API key:', error.message));
-}
-
-// Function to validate email format
-function isValidEmail(email) {
-    // Use a regular expression to validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-// Function to validate URL format
-function isValidUrl(url) {
-    // Use a regular expression to validate URL format
-    const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
-    return urlRegex.test(url);
-}
-
-// Add event listeners for form submissions
-document.getElementById('registerForm').addEventListener('submit', handleRegistrationFormSubmit);
-document.getElementById('loginForm').addEventListener('submit', handleLoginFormSubmit);
-
-// Call createApiKey function to create an API key (optional)
-createApiKey();
-
