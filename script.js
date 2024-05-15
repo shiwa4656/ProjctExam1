@@ -273,6 +273,7 @@ function signOut() {
   location.reload();
 }
 
+
 document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.querySelector('.menu-toggle');
   const menuItems = document.querySelector('.menu-items');
