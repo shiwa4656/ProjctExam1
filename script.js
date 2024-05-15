@@ -277,7 +277,7 @@ function signOut() {
 document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.querySelector('.menu-toggle');
   const menuItems = document.querySelector('.menu-items');
-  const contentElements = document.querySelectorAll('.hero, .main'); // Selects both hero and main elements
+  const contentElements = document.querySelectorAll('.hero, .main, .Delete-btn'); // Selects both hero and main elements
 
   menuToggle.addEventListener('click', function () {
       menuItems.classList.toggle('active');

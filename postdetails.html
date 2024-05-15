@@ -56,6 +56,19 @@
             color: #fff;
             cursor: pointer;
         }
+        /*media Query for mobile devices make the texts the content more readbale*/
+
+        @media screen and (max-width: 600px) {
+            .post-details-container {
+                width: 90%;
+            }
+            .Delete-btn {
+                margin-left: 85%;
+                
+            }
+
+
+        }
     </style>
     
     
@@ -63,21 +76,23 @@
 <body>
     <header>
         <nav>
-          <div class="left-nav">
-              <div class="logo">
-                  <img class="logoImage" src="RealBlogLogo.png" alt="HotView Labs Logo">
+            <div class="left-nav">
+                <div class="logo">
+                    <img class="logoImage" src="RealBlogLogo.png" alt="HotView Labs Logo">
                 </div>
                 <h1>HotView Labs</h1>
-          </div>
-       
-          <ul>
-            <li><a href="index.html" >Blog</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="register.html" id="register">Register</a></li>
-            <li><a class="edit-post-btn">Edit Post</a></li>
-            <li><a href="login.html" id="login">Login</a></li>
-            <li><a onclick="signOut()" class="Nav-btn logout-btn" id="logout-btn">SIGN OUT</a></li>
-          </ul>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+            <div class="menu-items">
+                <ul>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="newpost.html" class="Nav-btn" id="newpost-btn">➕ NEW POST</a></li>
+                    <li><a href="register.html" class="Nav-btn" id="register-btn">REGISTER</a></li>
+                    <li><a href="login.html" class="Nav-btn login-btn" id="login-btn">LOGIN</a></li>
+                    <li><a onclick="signOut()" class="Nav-btn logout-btn" id="logout-btn">SIGN OUT</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
        <button class="Delete-btn">Delete</button>
@@ -119,7 +134,8 @@
 </footer>
 
 
-  <script src="postdetails.js"></script>     
+  <script src="postdetails.js"></script> 
+  <script src ="script.js"></script>    
     
 </body>
 </html>
