@@ -276,10 +276,18 @@ function signOut() {
 document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.querySelector('.menu-toggle');
   const menuItems = document.querySelector('.menu-items');
-  
+  const contentElements = document.querySelectorAll('.hero, .main'); // Selects both hero and main elements
+
   menuToggle.addEventListener('click', function () {
       menuItems.classList.toggle('active');
+      
+      contentElements.forEach(element => {
+          if (menuItems.classList.contains('active')) {
+              element.style.marginTop = '200px'; // Adjust margin if menu is active
+          } else {
+              element.style.marginTop = '0'; // Reset margin if menu is not active
+          }
+      });
   });
 });
-
 
