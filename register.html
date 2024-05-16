@@ -7,6 +7,15 @@
     <link rel="icon" type="image/png" href="RealBlogLogo.png">
     <link rel="stylesheet" href="styles.css">
     <title>Register</title>
+    <style>
+      .signup-container {
+        margin: 5%;
+       
+      }
+      body{
+        background-color: ;
+      }
+    </style>
 </head>
 <body>
     <header>
@@ -24,24 +33,24 @@
             <li><a href="register.html">Register</a></li>
             <li><a href="login.html">Login</a></li>
           </ul>
-        </nav>
-        <div class="signup-container">
-            <div class="signup-form">
-              <h2>Create An Account</h2>
-              <p>Already a user? <a href="login.html" class="signin-link">Sign In</a></p>
-              <form onsubmit="register(event)" id="register-form">
-                <input type="text" id="name" name="name" placeholder="name" required>
-                <input type="email" id="email" name="email" placeholder="Email Address" required>
-                <input type="password" id="password" name="password" placeholder="Password" required>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="confirm-Password" required>
-                <button>Register</button>
-              </form>
-            </div>
-          </div>
-          
-              
+        </nav>             
               
       </header>
+      <main>
+        <div class="signup-container">
+          <div class="signup-form">
+            <h2>Create An Account</h2>
+            <p>Already a user? <a href="login.html" class="signin-link">Sign In</a></p>
+            <form onsubmit="register(event)" id="register-form">
+              <input type="text" id="name" name="name" placeholder="name" required>
+              <input type="email" id="email" name="email" placeholder="Email Address" required>
+              <input type="password" id="password" name="password" placeholder="Password" required>
+              <input type="password" id="confirm-password" name="confirm-password" placeholder="confirm-Password" required>
+              <button>Register</button>
+            </form>
+          </div>
+        </div>
+      </main>
       <footer>
         <div class="Footer-logo">
           <img class="logoImage" src="RealBlogLogo.png" alt="HotView Labs Logo">
