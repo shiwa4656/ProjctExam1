@@ -96,6 +96,7 @@ a {
   .menu-toggle {
       display: block;
   }
+  
 
   nav ul {
     align-items: normal;
@@ -105,19 +106,17 @@ a {
   .menu-items {
       display: none;
       flex-direction: column;
-      width: 88%;
       height: 200px;
       align-items: flex-start;
       background-color: #1E293B; /* Same as the nav background color */
-      padding: 2px 0;
       position: absolute;
-      top: 80px; /* Adjust based on your logo and header height */
-      left: 2%;
-      right: 5%;
+      top: 113px; /* Adjust based on your logo and header height */
       z-index: 1;
       margin-top: 1%;
-      margin: 4%;
- 
+      width: 100%;
+      margin-right: 3%;
+      left: 4.5%;
+      width: 91%;   
      
   }
 
