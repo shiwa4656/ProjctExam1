@@ -34,26 +34,33 @@ async function create(event){
     }   
 }
 
-if (localStorage.getItem("token")) {
-    document.querySelector(".edit-post-btn").style.display = "inline-block";
 
-    // hide login button
-      document.querySelector("#register").style.display = "none";
-      document.querySelector("#login").style.display = "none";
-      document.querySelector("#logout-btn").style.display = "inline-block";
-
-} else {
-    document.querySelector(".edit-post-btn").style.display = "none";
-    document.querySelector("#logout-btn").style.display = "none";
-}
-
-// Edit post event
-document.querySelector(".edit-post-btn").addEventListener("click", function(){
-    window.location.href = "editpost.html?id=" + id;
-});
 
 
 function signOut() {
-  localStorage.removeItem("token");
-  location.reload();
-}
+    // Remove the token from localStorage
+    localStorage.removeItem("token");
+  
+    // Redirect the user to the index page
+    window.location.href = 'index.html';
+  }
+  
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuItems = document.querySelector('.menu-items');
+    const contentElements = document.querySelectorAll('.signup-container'); // Selects both hero and main elements
+  
+    menuToggle.addEventListener('click', function () {
+        menuItems.classList.toggle('active');
+        
+        contentElements.forEach(element => {
+            if (menuItems.classList.contains('active')) {
+                element.style.marginTop = '200px'; // Adjust margin if menu is active
+            } else {
+                element.style.marginTop = '0'; // Reset margin if menu is not active
+            }
+        });
+    });
+  });
+  
