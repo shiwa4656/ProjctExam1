@@ -7,24 +7,67 @@
     <link rel="icon" type="image/png" href="RealBlogLogo.png">
     <link rel="stylesheet" href="styles.css">
     <title>Register</title>
+    <style>
+        .signup-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .signup-form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .signup-form h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .signup-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .signup-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .signup-form p {
+            text-align: center;
+        }
+        .signin-link {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav>
-          <div class="left-nav">
-              <div class="logo">
-                  <img class="logoImage" src="RealBlogLogo.png" alt="HotView Labs Logo">
-                </div>
-                <h1>HotView Labs</h1>
-          </div>
-       
-          <ul>
-            <li><a href="index.html">Blog</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="#login">Login</a></li>
-          </ul>
-        </nav>
+      <nav>
+        <div class="left-nav">
+            <div class="logo">
+                <img class="logoImage" src="RealBlogLogo.png" alt="HotView Labs Logo">
+            </div>
+            <h1>HotView Labs</h1>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <div class="menu-items">
+            <ul>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="register.html" class="Nav-btn" id="register-btn">REGISTER</a></li>
+                <li><a href="login.html" class="Nav-btn login-btn" id="login-btn">LOGIN</a></li>
+            </ul>
+        </div>
+    </nav>
         <div class="signup-container">
             <div class="signup-form">
               <h2>Login</h2>
