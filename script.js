@@ -277,7 +277,7 @@ let interval = setInterval(() => {
     LaPost.innerHTML += latestNews.charAt(count);
     count++;
   }
-}, 400);
+}, 200);
 
 function signOut() {
   localStorage.removeItem("token");
