@@ -5,7 +5,8 @@ body {
 header{
     background-color: RGB(15, 23, 42);
     margin: 3%;
-    margin-top: 1%;
+    margin-top: 0%;
+    
     
   }
 
@@ -145,6 +146,7 @@ a {
 /* Hero Section */
 .hero {
   margin-left: 4%;
+ 
 }
 
 .hero h1 {
