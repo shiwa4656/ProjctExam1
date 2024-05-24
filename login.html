@@ -6,48 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="icon" type="image/png" href="RealBlogLogo.png">
     <link rel="stylesheet" href="styles.css">
-    <title>Register</title>
-    <style>
-        .signup-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .signup-form {
-            width: 300px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .signup-form h2 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .signup-form input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .signup-form button {
-            width: 100%;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .signup-form p {
-            text-align: center;
-        }
-        .signin-link {
-            color: #333;
-        }
-    </style>
+    <title>Register</title>    
 </head>
 <body>
     <header>
@@ -75,7 +34,7 @@
               <form onsubmit="register(event)" id="register-form">
                 <input type="email" id="email" name="email" placeholder="Email Address" required>
                 <input type="password" id="password" name="password" placeholder="Password" required> 
-                <button>Login</button>
+                <button class="loginOrRegisterBtn">Login</button>
               </form>
             </div>
           </div>

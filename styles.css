@@ -426,6 +426,13 @@ a {
     color: white;
   }
   /*Register page*/
+
+ /*footer mobil media query */
+
+
+
+/*Register page Style */
+ 
   .signup-container {
     display: flex;
     justify-content: center;
@@ -477,7 +484,21 @@ a {
   .signup-form .signup-btn:hover {
     background-color: #1E293B; /* Button hover color */
   }
+  .loginOrRegisterBtn{
 
+    background-color: #0F172A;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+
+}
+  .loginOrRegisterBtn:hover{
+    background-color: #1E293B;
+  }
+ 
 
 
 
@@ -495,47 +516,7 @@ a {
   }
 
 
-/*Register page Style */
-
-.signup-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.signup-form {
-  width: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.signup-form h2 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-.signup-form input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-.signup-form button {
-  width: 100%;
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.signup-form p {
-  text-align: center;
-}
-.signin-link {
-  color: #333;
-}
+ /*Register page*/
 /*mobile devices 768 px and below*/
 @media screen and (max-width: 768px) {
   .signup-form {
@@ -546,18 +527,20 @@ a {
 }
 
 
+
+
 /*ViewmoreHtml style code */
 
 .main-ViewMore{
   padding: 20px;
  
 }
-form{
+.SearchForm{
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
-input{
+#search{
   width: 50%;
   padding: 10px;
   border: 1px solid #ccc;
