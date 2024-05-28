@@ -4,56 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <title>New Post</title>
-    <style>
-        .signup-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-        }
-        .signup-form {
-            width: 50%;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .signup-form h2 {
-            text-align: center;
-        }
-        .signup-form input, .signup-form textarea {
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .signup-form button {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #333;
-            color: #fff;
-            cursor: pointer;
-        }
-    
-        /* make the text area a lttle bigger for around 200 words' content */
-        .signup-form textarea {
-            height: 250px;
-        }
-
-       
-       
-    </style>
 </head>
 <body>
     <header>
         <nav>
           <div class="left-nav">
               <div class="logo">
-                  <img class="logoImage" src="RealBlogLogo.png" alt="HotView Labs Logo">
+                  <img class="logoImage" src="../pictures/RealBlogLogo.png" alt="HotView Labs Logo">
                 </div>
                 <h1>HotView Labs</h1>
           </div>
@@ -63,8 +22,8 @@
             <li><a href="about.html">About</a></li>
           </ul>
         </nav>
-        <div class="signup-container">
-            <div class="signup-form">
+        <div class="signup-containerP">
+            <div class="signup-formP">
               <h2>Edit Post</h2>
               <form onsubmit="edit(event)" id="register-form">
                 <input type="text" id="title" name="title" placeholder="Title" required>
@@ -77,10 +36,10 @@
           
               
               
-      </header>¨
+      </header>
       <footer>
         <div class="Footer-logo">
-          <img class="logoImage" src="RealBlogLogo.png" alt="HotView Labs Logo">
+          <img class="logoImage" src="../pictures/RealBlogLogo.png" alt="HotView Labs Logo">
         </div>
         <div class="footer-content">
           <ul class="social-links">
@@ -94,7 +53,7 @@
           <p>&copy; 2024 HotView Labs. All rights reserved.</p>
         </div>
       </footer>
-     <script src="editpost.js"></script>
+     <script src="edit.js"></script>
      <script src = "script.js"></script>
 
 </body>

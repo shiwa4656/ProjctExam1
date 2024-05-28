@@ -12,7 +12,7 @@ async function create(event){
                 alt: title
             }
         }
-        const response = await fetch("https://v2.api.noroff.dev/blog/posts/trump", {
+        const response = await fetch("https://v2.api.noroff.dev/blog/posts/shirwac", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {

@@ -61,7 +61,7 @@ async function edit(event){
                 alert(error.message);
             });
         }
-        window.location.href = "index.html";
+        window.location.href = "../index.html";
     }
     catch(error){
         alert(error);

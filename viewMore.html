@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="RealBlogLogo.png">
+    <link rel="icon" type="image/png" href="pictures/RealBlogLogo.png">
     <title>View Blog Posts</title>
   
     
@@ -15,7 +15,7 @@
       <nav>
         <div class="left-nav">
             <div class="logo">
-                <img class="logoImage" src="RealBlogLogo.png" alt="HotView Labs Logo">
+                <img class="logoImage" src="pictures/RealBlogLogo.png" alt="HotView Labs Logo">
             </div>
             <h1>HotView Labs</h1>
         </div>
@@ -24,9 +24,9 @@
             <ul>
                 <li><a href="index.html">Blog</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="newpost.html" class="Nav-btn" id="newpost-btn">➕ NEW POST</a></li>
-                <li><a href="register.html" class="Nav-btn" id="register-btn">REGISTER</a></li>
-                <li><a href="login.html" class="Nav-btn login-btn" id="login-btn">LOGIN</a></li>
+                <li><a href="post/index.html" class="Nav-btn" id="newpost-btn">➕ NEW POST</a></li>
+                <li><a href="account/register.html" class="Nav-btn" id="register-btn">REGISTER</a></li>
+                <li><a href="account/login.html" class="Nav-btn login-btn" id="login-btn">LOGIN</a></li>
                 <li><a onclick="signOut()" class="Nav-btn logout-btn" id="logout-btn">SIGN OUT</a></li>
             </ul>
         </div>
@@ -35,7 +35,7 @@
     </header>
     <main>
         <form class="SearchForm">
-            <input type="text" id="search" placeholder="Search by tittle or word">
+            <input type="text" id="search" placeholder="Search by tittle or word" aria-label="search engine for the posts ">
         </form>
         <div class="filter-btn">
             <button class="newest-btn" id="newest">Newest</button>
@@ -43,7 +43,7 @@
           </div>
         <div class="post-grid">
             <article class="grid-post">
-              <img class="grid-post-image" src="Artificial-Intelligence-AI-PNG-Photos.png" alt="Post Description">
+              <img class="grid-post-image" src="'#" alt="Post Description">
               <div class="grid-post-content">
                 <p class="grid-post-date"></p>
                 <h2 class="grid-post-title"></h2>
@@ -54,7 +54,7 @@
     </main>
 <footer>
     <div class="Footer-logo">
-      <img class="logoImage" src="RealBlogLogo.png" alt="HotView Labs Logo">
+      <img class="logoImage" src="pictures/RealBlogLogo.png" alt="HotView Labs Logo">
     </div>
     <div class="footer-content">
       <ul class="social-links">

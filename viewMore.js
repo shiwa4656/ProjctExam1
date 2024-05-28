@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Optional: Add a click event listener to redirect to a detailed view
         article.addEventListener('click', function () {
-            window.location.href = `postdetails.html?id=${post.id}`;
+            window.location.href = `post/postDetails.html?id=${post.id}`;
         });
 
         return article;

@@ -112,7 +112,7 @@ if (localStorage.getItem("token")) {
           // add event listener to the postDiv
           postDiv.addEventListener("click", function () {
             // redirect to the post details page
-            window.location.href = `postdetails.html?id=${post.id}`;
+            window.location.href = `post/postDetails.html?id=${post.id}`;
           });
 
 
@@ -185,7 +185,7 @@ if (localStorage.getItem("token")) {
             // add event listener to the postDiv
             postDiv.addEventListener("click", function () {
               // redirect to the post details page
-              window.location.href = `postdetails.html?id=${post.id}`;
+              window.location.href = `post/postDetails.html?id=${post.id}`;
             });
   
   

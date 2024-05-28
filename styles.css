@@ -546,3 +546,156 @@ a {
   border: 1px solid #ccc;
   border-radius: 10px;
 } 
+
+/* Edit Page style */
+
+
+/* Edit Page style */
+
+/*Post/index.html page style */
+.signup-containerP {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.signup-formP {
+    width: 50%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.signup-formP h2 {
+    text-align: center;
+    color: #333;
+    
+}
+.signup-formP input, .signup-formP textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.signup-formP button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+/* make the text area a lttle bigger for around 200 words' content */
+.signup-formP textarea {
+    height: 200px;
+}
+
+/*mobile screen*/
+@media screen and (max-width: 600px) {
+    .signup-formP {
+        width: 80%;
+    }
+
+    .signup-formP textarea {
+        height: 100px;
+    }
+
+
+}
+
+/*Post/index.html page style */
+
+/*about.html page style */
+.about-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: #333333;
+}
+
+ .about-section h2 {
+    color: #0F172A;
+}
+
+.about-section p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+/*about.html page style */
+
+/*POST DETAILS PAGE */
+.bodyDetails{
+    background-color: #474c54;
+}
+.post-detailsD {
+    display: flex;
+    justify-content: center;
+}
+.post-details-containerD {
+    width: 50%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.titleD {
+    text-align: center;
+}
+.mediaD {
+    display: flex;
+    justify-content: center;
+}
+.post-details-contentD {
+    text-align: center; 
+    padding: 20px;
+}
+.dateD, .authorD {
+    font-size: 12px;
+    color: #242323;
+    margin: 10px 0; 
+}
+.contentD {
+    text-align: left; 
+    margin-top: 20px;
+    line-height: 1.6;
+    font-size: 16px;
+}
+.edit-post-btn:hover {
+    cursor: pointer;
+}
+#logout-btn :hover{
+    cursor: pointer;
+}
+.Delete-btnD {
+    margin-left: 72%;
+    margin-top: 1%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #0F172A;
+    cursor: pointer;
+    font-weight: bold;
+}
+/*media Query for mobile devices make the texts the content more readbale*/
+
+@media screen and (max-width: 600px) {
+
+    .post-details-containerD {
+        width: 90%;
+        background-color: #fff;
+       
+    }
+    .Delete-btnD {
+        margin-left: 85%;
+    }
+
+
+}
+
+/*POST DETAILS PAGE */
